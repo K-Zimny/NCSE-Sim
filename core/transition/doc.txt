@@ -9,8 +9,10 @@ Uses
     Fake Processing of commands
 
 Code
-    transition();
+    transition(message, time);
         Async await call
+        Pass in a message for the transition to display
+        Set time of transition
 
 Todo
     Pram - Input a message - message gets rendered on the transition screen
