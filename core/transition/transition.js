@@ -1,10 +1,13 @@
 function transition(message, time) {
-  console.log('transition() Started - 1000')
-  console.log('Loading Message: ' + message)
+  console.groupCollapsed(`%ctransition()`, 'color: Green;') // debug
+  console.log(`transition() Started - ${message} ,${time}`)
+
   return new Promise((resolve) => {
     setTimeout(() => {
+      console.log(`transition() Complete - ${message} ,${time}`)
+      console.groupEnd('transition()')
+
       resolve()
-      console.log('transition() Complete - 1000')
     }, time)
   })
 }

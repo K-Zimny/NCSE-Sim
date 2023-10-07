@@ -11,6 +11,7 @@ Uses
 Code
     transition(message, time);
         Async await call
+            Sequential Async
         Pass in a message for the transition to display
         Set time of transition
 
