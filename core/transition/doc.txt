@@ -1,0 +1,18 @@
+Core
+
+Transition 
+
+Creates a timed transition screen
+
+Uses
+    Fake Load Screen
+    Fake Processing of commands
+
+Code
+    transition();
+        Async await call
+
+Todo
+    Pram - Input a message - message gets rendered on the transition screen
+    NTH - Time Factor Adjustment - set time or create a time factor => Thinking this one, add in a random aspect to the call
+
