@@ -1,0 +1,11 @@
+div[data-component='screen'],
+div[data-component='message'],
+div[data-component='options'],
+input {
+  outline: 2px solid black;
+  margin-block: 1rem;
+}
+
+div[data-component='screen'] {
+  height: 500px;
+}
