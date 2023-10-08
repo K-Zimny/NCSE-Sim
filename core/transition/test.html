@@ -1,0 +1,66 @@
+<!--Visible Testing Page for Transition Function-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition Test</title>
+  </head>
+  <body>
+    <h1>Transition Test</h1>
+
+    <div class="test-screen-1" style="display: none">
+      Screen 1
+      <div style="width: 400px; height: 400px; background-color: red"></div>
+    </div>
+
+    <div class="test-transition-1" style="display: none">
+      Transition 1
+      <div style="width: 400px; height: 400px; background-color: green"></div>
+    </div>
+
+    <div class="test-screen-2" style="display: none">
+      Screen 2
+      <div style="width: 400px; height: 400px; background-color: blue"></div>
+    </div>
+
+    <script type="module">
+      import { transition } from './transition.js'
+
+      async function transitionTest() {
+        const transition1 = document.querySelector('.test-transition-1')
+        const screen1 = document.querySelector('.test-screen-1')
+        const screen2 = document.querySelector('.test-screen-2')
+
+        const duration = prompt('Duration (milis)', 1000)
+        const transitionText = prompt('Transition Text', 'Transition Text')
+
+        for (let i = 0; i < 50; i++) {
+          alert('Run Transition Sequence?')
+
+          console.log('screen1')
+          screen1.style.display = 'block'
+
+          await transition(duration, 'FOR DEBUG')
+
+          screen1.style.display = 'none'
+          transition1.style.display = 'block'
+
+          await transition(duration, transitionText)
+
+          transition1.style.display = 'none'
+          console.log('screen2')
+          screen2.style.display = 'block'
+
+          await transition(500, 'FOR DEBUG')
+          screen2.style.display = 'none'
+
+          console.log(' ')
+        }
+      }
+
+      transitionTest()
+    </script>
+  </body>
+</html>

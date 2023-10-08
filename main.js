@@ -9,7 +9,7 @@ async function runGame() {
 
   console.clear()
   console.log(' ')
-  console.log('Game Started')
+  console.log('RUN GAME')
   console.log('_________________________________')
   console.log(' ')
 

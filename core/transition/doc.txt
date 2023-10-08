@@ -2,18 +2,19 @@ Core
 
 Transition 
 
-Creates a timed transition screen
+Creates a timed transition element
+
+Code
+    Sequential Async await call
+
+    transition(duration, text);
+        Set duration in milis of transition
+        Pass in text for the transition to display
 
 Uses
     Fake Load Screen
     Fake Processing of commands
-
-Code
-    transition(message, time);
-        Async await call
-            Sequential Async
-        Pass in a message for the transition to display
-        Set time of transition
+    Pacing / Suspension
 
 Todo
     Pram - Input a message - message gets rendered on the transition screen
