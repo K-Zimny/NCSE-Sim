@@ -2,11 +2,14 @@ div[data-component='screen'],
 div[data-component='message'],
 div[data-component='options'],
 div[data-component='transition'],
-div[data-component='return'] input {
+div[data-component='return'],
+input {
+  background: lightgray;
   outline: 2px solid black;
   margin-block: 1rem;
 }
 
 div[data-component='screen'] {
+  background: white;
   height: 500px;
 }
