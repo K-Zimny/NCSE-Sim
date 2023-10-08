@@ -1,10 +1,13 @@
 const content = {
   phase1: {
     messageText: 'Check Core Temperature?',
-    messageOptions: 'Yes / NO',
-    transitionDuration: 1000,
-    transitionText: 'Checking Core Temperature ...',
-    messageReturn: 'Core Temperature Normal.',
+    optionsText: 'YES / NO',
+    transitionDuration: 2000,
+    transitionTextYes: 'Checking Core Temperature ...',
+    transitionTextNo: '',
+    returnTextYes: 'Core Temperature Normal.',
+    returnTextNo: '',
+    userAnswer: '',
   },
 }
 

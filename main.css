@@ -1,7 +1,8 @@
 div[data-component='screen'],
 div[data-component='message'],
 div[data-component='options'],
-input {
+div[data-component='transition'],
+div[data-component='return'] input {
   outline: 2px solid black;
   margin-block: 1rem;
 }
