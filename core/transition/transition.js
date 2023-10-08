@@ -1,14 +1,16 @@
-function transition(duration, text) {
+function transition(transitionDuration, transitionText) {
   console.groupCollapsed(`%ctransition()`, 'color: Green;') // debug
-  console.log(`transition() Started - ${text} ,${duration}`)
+  console.log(`transition() Started - ${transitionText} ,${transitionDuration}`)
 
   return new Promise((resolve) => {
     setTimeout(() => {
-      console.log(`transition() Complete - ${text} ,${duration}`)
+      console.log(
+        `transition() Complete - ${transitionText} ,${transitionDuration}`
+      )
       console.groupEnd('transition()')
 
       resolve()
-    }, duration)
+    }, transitionDuration)
   })
 }
 

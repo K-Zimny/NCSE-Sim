@@ -1,6 +1,8 @@
 'use strict'
 
 import { transition } from './core/transition/transition.js'
+import { domGetter } from './core/domGetter/domGetter.js'
+import { content } from './content.js'
 
 // ========== < runGame > ==========
 
@@ -9,13 +11,19 @@ console.clear()
 console.log('%cRUN GAME', 'color: red')
 console.log(' ')
 
+console.log(domGetter())
+
 async function runGame() {
-  console.log('A screen is shown with a question and 2 options')
+  // TODO, clean up content object
+  console.log(content.phase1.messageText)
   console.log('A user types their answer')
 
-  await transition(1000, 'Transition Screen Message')
+  await transition(
+    content.phase1.transitionDuration,
+    content.phase1.transitionText
+  )
 
-  console.log('A new screen and question is shown')
+  console.log(content.phase1.messageReturn)
 }
 
 setTimeout(runGame, 800) // Quality of life, easier on eyes in debug
