@@ -36,14 +36,14 @@ const renderScreen = ({ heading, body, options, error }) => {
 
 function clearScreen() {
   const domHeading = document.querySelectorAll('.heading')
-  const domBody = document.querySelector('.body')
-  const domOptions = document.querySelector('.options')
-  const domError = document.querySelector('.error')
+  const domBody = document.querySelectorAll('.body')
+  const domOptions = document.querySelectorAll('.options')
+  const domError = document.querySelectorAll('.error')
 
   domHeading.forEach((heading) => heading.innerText = '')
-  domBody.innerText = ''
-  domOptions.innerText = ''
-  domError.innerText = ''
+  domBody.forEach((body) => body.innerText="")
+  domOptions.forEach((options) => options.innerText = '')
+  domError.forEach((error) => error.innerText = '')
 
   // TODO : incorporate clearScreen() into renderScreen()
   // TODO : rework how were clearing the screen, rm divs?
