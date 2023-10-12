@@ -1,9 +1,6 @@
 'use strict'
 
 import { transition } from './core/transition/transition.js'
-/*
-// import { domGetter } from './core/domGetter/domGetter.js'
-*/
 
 const domScreen = document.querySelector("[data-component='screen']")
 const domMessage = document.querySelector("[data-component='message'")
