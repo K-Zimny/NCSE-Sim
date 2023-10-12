@@ -1,16 +1,6 @@
-import { content } from './content.js'
-
 const domScreen = document.querySelector("[data-component='screen']")
 
 const renderScreen = ({ heading, body, options, error }) => {
-
-
-  //   console.log(content)
-  //   console.log(heading)
-  //   console.log(body)
-  //   console.log(options)
-  //   console.log(error)
-
   domScreen.hasChildNodes() ? clearScreen() : '';
 
   if (heading != undefined) {

@@ -1,5 +1,5 @@
 const content = {
-  question_1: {
+  checkTemp: {
     screen_1: {
       heading: 'Some Heading Text',
       body: 'Some body Text',

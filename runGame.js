@@ -1,6 +1,6 @@
 'use strict'
 
-import { transition } from './core/transition/transition.js'
+import { addDelay } from './core/addDelay/addDelay.js'
 import { renderScreen } from './render.js'
 import { content } from './content.js'
 
@@ -10,9 +10,11 @@ console.log('%cRUN GAME', 'color: red')
 
 // run
 async function runGame() {
-  renderScreen(content.question_1.screen_1)
-    await transition(1000)
-  renderScreen(content.question_1.screen_2)
+  // Question 1
+  renderScreen(content.checkTemp.screen_1)
+    await addDelay(1000)
+  renderScreen(content.checkTemp.screen_2)
+    await addDelay(1000)
 }
 
 setTimeout(runGame, 1200) // Quality of life
