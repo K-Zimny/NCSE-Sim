@@ -13,38 +13,55 @@ console.log('%cRUN GAME', 'color: red')
 // TODO : Waiting for each screen once this gets project gets bigger will suck. Need to think about this for debugging? Or just comment out section?
 function runGame() {
   // ---------------------------------------------------------------
+  
   // Check Core Temp?
-  // TODO: Can I await the resolution of my function?
+  // TODO :  Can I await the resolution of my function?
   // TODO : function checkTemp(){}; await checkTemp(); ????
 
-  let checkTempRan = false;
+  let checkTempRan = false
   renderScreen(content.checkTemp.screen_1)
-
 
   //- User Input
 
-  const terminalInput = document.querySelector('input');
-  let terminalValue = "";
-  
-  terminalInput.addEventListener('input', function handler(e) {
+  const terminalInput = document.querySelector('input')
+  let terminalValue = ''
+
+  terminalInput.addEventListener('input', async function handler(e) {
     terminalValue = e.target.value
     console.log('terminal value:', e.target.value)
+
     if (terminalValue === 'yes') {
+      console.log('YES')
+
+      await addDelay(1000)
+      clearScreen()
+      renderScreen(content.checkTemp.screen_2)
+      await addDelay(1000)
+
+      clearScreen()
+      renderScreen(content.checkTemp.screen_3_yes)
+      await addDelay(1000)
+
+      checkTemp = true
+      this.removeEventListener('input', handler)
+    } else if (terminalValue === 'no') {
+      console.log('NO')
+
+      clearScreen()
+      renderScreen(content.checkTemp.screen_2)
+      await addDelay(1000)
+
+      clearScreen()
+      renderScreen(content.checkTemp.screen_3_no)
+      await addDelay(1000)
+
+      checkTempRan = true
       this.removeEventListener('input', handler)
     }
-    // if(terminalValue === 'yes') {
-    //   terminalInput.removeEventListener('input', (e) => {
-    //         terminalValue = e.target.value
-    //       console.log('terminal value:', e.target.value)
-    //       this.removeEventListener('input', handler)
-    //   }
-    //   )
-    // }
   })
 
-
-    // Vent Gas
-    // if (ventG)
+  // Vent Gas
+  // if (ventG)
   // })
 
   //   async function checkTemp(e) {
@@ -73,10 +90,10 @@ function runGame() {
   //   }
   // }
 
-//     terminalInput.removeEventListener('input',  ()=>{});
-//     // return new Promise(resolve =>  btn.onclick = () => resolve());
-//   })
-// }
+  //     terminalInput.removeEventListener('input',  ()=>{});
+  //     // return new Promise(resolve =>  btn.onclick = () => resolve());
+  //   })
+  // }
 }
     const checkTemp = async () => {
       console.log("hello")
