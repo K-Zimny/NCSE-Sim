@@ -1,4 +1,4 @@
-function transition(transitionDuration, transitionText) {
+function transition(transitionDuration) {
 
   return new Promise((resolve) => {
     setTimeout(() => {

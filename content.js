@@ -1,15 +1,16 @@
 const content = {
-  error: 'Error_1 - Command Not Found',
-  phase1: {
-    messageText: 'Check Core Temperature?',
-    optionsText: 'YES / NO',
-    transitionDuration: 2000,
-    transitionTextYes: 'Checking Core Temperature ...',
-    transitionTextNo: 'transitionTextNo',
-    returnTextYes: 'Core Temperature Normal.',
-    returnTextNo: 'returnTextNo',
-    userAnswer: '',
+  question_1: {
+    screen_1: {
+      heading: 'Some Heading Text',
+      body: 'Some body Text',
+      options: 'Some options',
+      error: 'some error',
+    },
+    screen_2: {
+      heading: 'Loading...',
+    },
   },
 }
+
 
 export { content }
