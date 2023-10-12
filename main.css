@@ -1,3 +1,8 @@
+body {
+  background: #000;
+  color: green;
+}
+
 div[data-component='screen'],
 div[data-component='message'],
 div[data-component='options'],
@@ -10,6 +15,6 @@ input {
 }
 
 div[data-component='screen'] {
-  background: white;
+  background: #1f1f1f;
   height: 500px;
 }

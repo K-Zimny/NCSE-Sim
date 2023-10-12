@@ -9,9 +9,12 @@ const content = {
     screen_2: {
       heading: 'Loading...',
     },
-    screen_3: {
+    screen_3_yes: {
       heading: "Core Temperature: Normal."
-    }
+    },
+    screen_3_no: {
+      heading: "Did not check temp.",
+    },
   },
   ventGas: {
     screen_1: {
