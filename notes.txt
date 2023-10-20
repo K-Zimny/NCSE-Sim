@@ -1,0 +1,2 @@
+// TODO : If you refresh the screen you will lose your progress lol.
+// TODO : Waiting for each screen once this gets project gets bigger will suck. Need to think about this for debugging? Or just comment out section?
