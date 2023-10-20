@@ -10,26 +10,28 @@ const content = {
       heading: 'Loading...',
     },
     screen_3_yes: {
-      heading: "Core Temperature: Normal."
+      heading: 'Core Temperature: Normal.',
     },
     screen_3_no: {
-      heading: "Did not check temp.",
+      heading: 'Did not check temp.',
     },
   },
   ventGas: {
     screen_1: {
-      heading: "Vent Toxic Gas?",
-      body: "Open radium actuator to relieve core gases.",
-      options: "[YES / NO]"
+      heading: 'Vent Toxic Gas?',
+      body: 'Open radium actuator to relieve core gases.',
+      options: '[YES / NO]',
     },
     screen_2: {
-      heading: "Venting..."
+      heading: 'Venting...',
     },
-    screen_3: {
-      error: "Error; exit status:1;"
-    }
-  }
+    screen_3_yes: {
+      heading: 'Gas vented',
+    },
+    screen_3_no: {
+      error: 'Error; exit status:1;',
+    },
+  },
 }
-
 
 export { content }

@@ -4,68 +4,90 @@ import { addDelay } from './core/addDelay/addDelay.js'
 import { renderScreen, clearScreen } from './render.js'
 import { content } from './content.js'
 
-// Setup
 console.clear()
 console.log('%cRUN GAME', 'color: red')
 
-// run
 const terminalInput = document.querySelector('input')
 let terminalValue = ''
 
-let checkTempRan = false
-
 async function runGame() {
   await checkTemp()
+  await addDelay(2000)
+  clearScreen()
+  await addDelay(2000)
+  await ventGas()
+  console.log('runGame() End')
 }
 
 function checkTemp() {
-  renderScreen(content.checkTemp.screen_1)
-  console.log('checkTemp() Begin')
+  return new Promise((resolve) => {
+    clearScreen()
+    terminalInput.value = ''
+    let terminalValue = ''
+    renderScreen(content.checkTemp.screen_1)
+    console.log('checkTemp() Begin')
 
-  // await addDelay(3000)
+    terminalInput.addEventListener('input', async function handler(e) {
+      terminalValue = e.target.value
 
-  terminalInput.addEventListener('input', async function handler(e) {
-    terminalValue = e.target.value
+      if (terminalValue === 'yes' || terminalValue === 'no') {
+        console.log(terminalValue)
 
-    if (terminalValue === 'yes') {
-      console.log('yes')
+        this.removeEventListener('input', handler)
 
-      this.removeEventListener('input', handler)
+        clearScreen()
+        renderScreen(content.checkTemp.screen_2)
 
-      clearScreen()
-      renderScreen(content.checkTemp.screen_2)
+        await addDelay(1000)
 
-      await addDelay(1000)
+        clearScreen()
+        renderScreen(
+          terminalValue === 'yes'
+            ? content.checkTemp.screen_3_yes
+            : content.checkTemp.screen_3_no
+        )
 
-      clearScreen()
-      renderScreen(content.checkTemp.screen_3_yes)
-
-      checkTempRan = true
-
-      return new Promise((resolve) => {
         console.log('checkTemp() End')
+
         resolve()
-      })
-    } else if (terminalValue === 'no') {
-      console.log('no')
+      }
+    })
+  })
+}
 
-      this.removeEventListener('input', handler)
+function ventGas() {
+  return new Promise((resolve) => {
+    clearScreen()
+    terminalInput.value = ''
+    let terminalValue = ''
+    renderScreen(content.ventGas.screen_1)
+    console.log('ventGas() Begin')
 
-      clearScreen()
-      renderScreen(content.checkTemp.screen_2)
+    terminalInput.addEventListener('input', async function handler(e) {
+      terminalValue = e.target.value
 
-      await addDelay(1000)
+      if (terminalValue === 'yes' || terminalValue === 'no') {
+        console.log(terminalValue)
 
-      clearScreen()
-      renderScreen(content.checkTemp.screen_3_no)
+        this.removeEventListener('input', handler)
 
-      checkTempRan = true
+        clearScreen()
+        renderScreen(content.ventGas.screen_2)
 
-      return new Promise((resolve) => {
-        console.log('checkTemp() End')
+        await addDelay(1000)
+
+        clearScreen()
+        renderScreen(
+          terminalValue === 'yes'
+            ? content.ventGas.screen_3_yes
+            : content.ventGas.screen_3_no
+        )
+
+        console.log('ventGas() End')
+
         resolve()
-      })
-    }
+      }
+    })
   })
 }
 
