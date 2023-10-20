@@ -8,24 +8,19 @@ console.clear()
 console.log('%cRUN GAME', 'color: red')
 
 const terminalInput = document.querySelector('input')
-let terminalValue = ''
 
 async function runGame() {
-  await checkTemp()
-  await addDelay(2000)
-  clearScreen()
-  await addDelay(2000)
-  await ventGas()
+  await handleScene('checkTemp', content.checkTemp)
+  await handleScene('ventGas', content.ventGas)
   console.log('runGame() End')
 }
 
-function checkTemp() {
+function handleScene(sceneName, sceneContent) {
   return new Promise((resolve) => {
     clearScreen()
-    terminalInput.value = ''
     let terminalValue = ''
-    renderScreen(content.checkTemp.screen_1)
-    console.log('checkTemp() Begin')
+    renderScreen(sceneContent.screen_1)
+    console.log(`${sceneName}() Begin`)
 
     terminalInput.addEventListener('input', async function handler(e) {
       terminalValue = e.target.value
@@ -36,59 +31,27 @@ function checkTemp() {
         this.removeEventListener('input', handler)
 
         clearScreen()
-        renderScreen(content.checkTemp.screen_2)
+        renderScreen(sceneContent.screen_2)
 
         await addDelay(1000)
 
         clearScreen()
         renderScreen(
           terminalValue === 'yes'
-            ? content.checkTemp.screen_3_yes
-            : content.checkTemp.screen_3_no
+            ? sceneContent.screen_3_yes
+            : sceneContent.screen_3_no
         )
 
-        console.log('checkTemp() End')
+        terminalInput.value = ''
+        await addDelay(2000)
+        clearScreen()
+        await addDelay(2000)
 
+        console.log(`${sceneName}() End`)
         resolve()
       }
     })
   })
 }
 
-function ventGas() {
-  return new Promise((resolve) => {
-    clearScreen()
-    terminalInput.value = ''
-    let terminalValue = ''
-    renderScreen(content.ventGas.screen_1)
-    console.log('ventGas() Begin')
-
-    terminalInput.addEventListener('input', async function handler(e) {
-      terminalValue = e.target.value
-
-      if (terminalValue === 'yes' || terminalValue === 'no') {
-        console.log(terminalValue)
-
-        this.removeEventListener('input', handler)
-
-        clearScreen()
-        renderScreen(content.ventGas.screen_2)
-
-        await addDelay(1000)
-
-        clearScreen()
-        renderScreen(
-          terminalValue === 'yes'
-            ? content.ventGas.screen_3_yes
-            : content.ventGas.screen_3_no
-        )
-
-        console.log('ventGas() End')
-
-        resolve()
-      }
-    })
-  })
-}
-
-setTimeout(runGame, 1200) // Quality of life
+setTimeout(runGame, 1200)
