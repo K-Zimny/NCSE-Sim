@@ -11,6 +11,10 @@ function handleScene(sceneContent) {
     renderScreen(sceneContent.screen_1)
 
     const terminalInput = document.querySelector('input')
+    document.addEventListener('click', () => {
+      terminalInput.focus()
+    })
+
     terminalInput.value = ''
     terminalInput.focus()
 

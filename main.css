@@ -3,20 +3,25 @@ body {
   color: green;
 }
 
-div[data-component='screen'],
-div[data-component='message'],
-div[data-component='options'],
-div[data-component='transition'],
-div[data-component='return'],
-input {
-  background: lightgray;
-  outline: 2px solid black;
-  margin-block: 1rem;
+div[data-component='screen'] {
+  /*  */
 }
 
-div[data-component='screen'] {
-  background: #1f1f1f;
-  height: 500px;
+.heading,
+.body,
+.options,
+.error,
+input {
+  margin-bottom: 0.5rem;
+}
+
+.heading {
+  margin-top: 0rem;
+  font-size: 75px;
+}
+
+.body {
+  font-size: 35px;
 }
 
 /* Previous Style Code*/
@@ -29,27 +34,27 @@ div[data-component='screen'] {
 
 body {
   background: #b4a396;
-  margin: 2rem;
+  margin: 4rem;
   text-transform: uppercase;
   font-family: 'Play', sans-serif;
-  font-size: 30px;
+  font-size: 50px;
   /* font-size: 70px; */
   color: #38e28f;
   text-shadow: #38e28f 0px 0px 50px;
   filter: drop-shadow(0px 0px 2px #38e28f) blur(1.6px) brightness(1.1);
-  letter-spacing: -5px;
+  letter-spacing: -1.5px;
   line-height: normal;
   /* line-height: 70px; */
   background: #ae9688;
   border-radius: 90px;
   border: 15px solid black;
-  height: 100vmin;
+  /* height: 100vmin; */
 }
 
 div[data-component='screen'] {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
   padding: 3rem;
   background: black;
   height: 100%;
@@ -61,7 +66,9 @@ input {
   border: none;
   text-transform: uppercase;
   font-family: 'Play', sans-serif;
-  font-size: 30px;
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 0.5rem;
   /* font-size: 70px; */
   color: #38e28f;
   text-shadow: #38e28f 0px 0px 50px;
@@ -84,7 +91,6 @@ input {
 }
 
 /* Animations */
-
 .animate_blink {
   animation-duration: 1.6s;
   animation-name: animate_blink;
