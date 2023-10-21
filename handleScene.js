@@ -8,13 +8,13 @@ function handleScene(sceneContent) {
   return new Promise((resolve) => {
     clearScreen()
 
+    renderScreen(sceneContent.screen_1)
+
     const terminalInput = document.querySelector('input')
     terminalInput.value = ''
     terminalInput.focus()
 
     let terminalValue = ''
-
-    renderScreen(sceneContent.screen_1)
 
     terminalInput.addEventListener('input', async function handler(e) {
       terminalValue = e.target.value.toUpperCase()

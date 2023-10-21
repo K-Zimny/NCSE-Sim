@@ -1,4 +1,6 @@
 const domScreen = document.querySelector("[data-component='screen']")
+const domInputExists = document.querySelector('input')
+const domInput = document.createElement('input')
 
 const renderScreen = ({ heading, body, options, error }) => {
   if (heading != undefined) {
@@ -29,6 +31,10 @@ const renderScreen = ({ heading, body, options, error }) => {
 
     domScreen.appendChild(domHeading)
   }
+
+  if (!domInputExists) {
+    domScreen.appendChild(domInput)
+  }
 }
 
 function clearScreen() {
@@ -37,13 +43,11 @@ function clearScreen() {
   const domOptions = document.querySelectorAll('.options')
   const domError = document.querySelectorAll('.error')
 
-  domHeading.forEach((heading) => (heading.innerText = ''))
-  domBody.forEach((body) => (body.innerText = ''))
-  domOptions.forEach((options) => (options.innerText = ''))
-  domError.forEach((error) => (error.innerText = ''))
-
-  // TODO : incorporate clearScreen() into renderScreen()
-  // TODO : rework how were clearing the screen, rm divs?
+  domHeading.forEach((heading) => heading.remove())
+  domBody.forEach((body) => body.remove())
+  domOptions.forEach((options) => options.remove())
+  domError.forEach((error) => error.remove())
+  domInput ? domInput.remove() : ''
 }
 
 export { renderScreen, clearScreen }
