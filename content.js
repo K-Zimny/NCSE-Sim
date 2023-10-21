@@ -1,55 +1,84 @@
+const yN = '[YES / NO]'
+let userAnswers = []
+
 const content = {
   checkTemp: {
     screen_1: {
       heading: 'Check Core Temperature?',
       body: 'Returns status of reactor core #17',
-      options: '[YES / NO]',
+      options: yN,
       error: 'No Errors present',
     },
     screen_2: {
-      heading: 'Loading...',
+      yes: {
+        heading: 'Loading...',
+      },
+      no: {
+        heading: '...',
+      },
     },
-    screen_3_yes: {
-      heading: 'Core Temperature: Normal.',
-    },
-    screen_3_no: {
-      heading: 'Core Temperature: undefined',
+    screen_3: {
+      yes: {
+        heading: 'Core Temperature: Normal.',
+      },
+      no: {
+        heading: 'Core Temperature: ',
+      },
     },
   },
   ventGas: {
     screen_1: {
       heading: 'Vent Gas?',
       body: 'Open radium actuator to relieve core gases. Venting prevents explosions',
-      options: '[YES / NO]',
+      options: yN,
     },
     screen_2: {
-      heading: 'Venting...',
+      yes: {
+        heading: 'Venting...',
+      },
+      no: {
+        heading: '...',
+      },
     },
-    screen_3_yes: {
-      heading: 'Gas vented',
-    },
-    screen_3_no: {
-      error: 'Error; exit status:1;',
+    screen_3: {
+      yes: {
+        heading: 'Gas Vented',
+        body: 'System Pressure: Normal',
+      },
+      no: {
+        heading: '',
+      },
     },
   },
   removeControlRod: {
     screen_1: {
       heading: 'Remove Control Rod?',
       body: 'Removes neutron control device from core.',
-      options: '[YES / NO]',
+      options: yN,
     },
     screen_2: {
-      heading: 'Processing...',
+      yes: {
+        heading: 'Processing...',
+      },
+      no: {
+        heading: '...',
+      },
     },
-    screen_3_yes: {
-      error: 'Danger lol',
+    screen_3: {
+      yes: {
+        heading: 'Criticality Event Imminent',
+      },
+      no: {
+        heading: '...',
+      },
     },
-    screen_3_no: {
-      heading: 'Good job Sector 7G',
+  },
+  userAnswerReport: {
+    screen_1: {
+      heading: 'Your Score',
+      body: userAnswers,
     },
   },
 }
-
-let userAnswers = []
 
 export { content, userAnswers }

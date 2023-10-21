@@ -2,6 +2,8 @@ import { addDelay } from './core/addDelay/addDelay.js'
 import { renderScreen, clearScreen } from './render.js'
 import { userAnswers } from './content.js'
 
+const testingDelayTime = 100
+
 function handleScene(sceneContent) {
   return new Promise((resolve) => {
     clearScreen()
@@ -18,21 +20,25 @@ function handleScene(sceneContent) {
       terminalValue = e.target.value.toUpperCase()
 
       if (terminalValue === 'YES' || terminalValue === 'NO') {
-        await addDelay(100)
+        await addDelay(testingDelayTime)
 
         this.removeEventListener('input', handler)
 
         terminalInput.value = ''
         clearScreen()
-        renderScreen(sceneContent.screen_2)
+        renderScreen(
+          terminalValue === 'YES'
+            ? sceneContent.screen_2.yes
+            : sceneContent.screen_2.no
+        )
 
-        await addDelay(100)
+        await addDelay(testingDelayTime)
 
         clearScreen()
         renderScreen(
           terminalValue === 'YES'
-            ? sceneContent.screen_3_yes
-            : sceneContent.screen_3_no
+            ? sceneContent.screen_3.yes
+            : sceneContent.screen_3.no
         )
 
         const answerArr = [sceneContent.screen_1.heading, terminalValue]
@@ -40,9 +46,9 @@ function handleScene(sceneContent) {
 
         console.log(userAnswers)
 
-        await addDelay(200)
+        await addDelay(testingDelayTime)
         clearScreen()
-        await addDelay(200)
+        await addDelay(testingDelayTime)
 
         resolve()
       }

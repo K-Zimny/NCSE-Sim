@@ -1,9 +1,6 @@
 const domScreen = document.querySelector("[data-component='screen']")
 
-
-
 const renderScreen = ({ heading, body, options, error }) => {
-
   if (heading != undefined) {
     const domHeading = document.createElement('h1')
     domHeading.innerText = heading
@@ -40,10 +37,10 @@ function clearScreen() {
   const domOptions = document.querySelectorAll('.options')
   const domError = document.querySelectorAll('.error')
 
-  domHeading.forEach((heading) => heading.innerText = '')
-  domBody.forEach((body) => body.innerText="")
-  domOptions.forEach((options) => options.innerText = '')
-  domError.forEach((error) => error.innerText = '')
+  domHeading.forEach((heading) => (heading.innerText = ''))
+  domBody.forEach((body) => (body.innerText = ''))
+  domOptions.forEach((options) => (options.innerText = ''))
+  domError.forEach((error) => (error.innerText = ''))
 
   // TODO : incorporate clearScreen() into renderScreen()
   // TODO : rework how were clearing the screen, rm divs?

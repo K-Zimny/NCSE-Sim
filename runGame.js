@@ -2,12 +2,13 @@
 
 import { handleScene } from './handleScene.js'
 import { content, userAnswers } from './content.js'
+import { renderScreen } from './render.js'
 
 async function runGame() {
   await handleScene(content.checkTemp)
   await handleScene(content.ventGas)
   await handleScene(content.removeControlRod)
-
+  handleScene(content.userAnswerReport)
   console.table(userAnswers)
 }
 
