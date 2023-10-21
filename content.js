@@ -50,4 +50,6 @@ const content = {
   },
 }
 
-export { content }
+let userAnswers = []
+
+export { content, userAnswers }
