@@ -12,7 +12,7 @@ function setHeight() {
 
 setHeight()
 
-const renderScreen = ({ heading, body, options, error }) => {
+const renderScreen = ({ heading, body, options, alert }) => {
   if (heading != undefined) {
     const domHeading = document.createElement('h1')
     domHeading.innerText = heading
@@ -27,17 +27,17 @@ const renderScreen = ({ heading, body, options, error }) => {
 
     domScreenTextContainer.appendChild(domHeading)
   }
+  if (alert != undefined) {
+    const domHeading = document.createElement('p')
+    domHeading.innerText = alert
+    domHeading.classList = 'alert'
+
+    domScreenTextContainer.appendChild(domHeading)
+  }
   if (options != undefined) {
     const domHeading = document.createElement('p')
     domHeading.innerText = options
     domHeading.classList = 'options animate_blink'
-
-    domScreenTextContainer.appendChild(domHeading)
-  }
-  if (error != undefined) {
-    const domHeading = document.createElement('p')
-    domHeading.innerText = error
-    domHeading.classList = 'error'
 
     domScreenTextContainer.appendChild(domHeading)
   }
@@ -51,12 +51,12 @@ function clearScreen() {
   const domHeading = document.querySelectorAll('.heading')
   const domBody = document.querySelectorAll('.body')
   const domOptions = document.querySelectorAll('.options')
-  const domError = document.querySelectorAll('.error')
+  const domalert = document.querySelectorAll('.alert')
 
   domHeading.forEach((heading) => heading.remove())
   domBody.forEach((body) => body.remove())
   domOptions.forEach((options) => options.remove())
-  domError.forEach((error) => error.remove())
+  domalert.forEach((alert) => alert.remove())
   domInput ? domInput.remove() : ''
 }
 
