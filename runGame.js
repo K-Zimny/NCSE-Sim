@@ -5,6 +5,10 @@ import { content, userAnswers } from './content.js'
 import { renderScreen } from './render.js'
 
 async function runGame() {
+  await handleScene(content.isSisyphusHappy)
+  await handleScene(content.andKey)
+  await handleScene(content.welcome)
+  await handleScene(content.radiationContainment)
   await handleScene(content.checkTemp)
   await handleScene(content.ventGas)
   await handleScene(content.removeControlRod)
