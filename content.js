@@ -20,106 +20,105 @@ let userAnswers = []
 const content = {
   nuclearTrolley1: {
     screen_1: {
-      heading: "Reactor Leak Detected",
-      body: "Option_1: Contain reactor leak. Estimatesd facility repair cost: >1 Billlion dollars.\n\nOption_2: Release radiation into atmosphere. Expected health risks low. This will prevent a reactor shutdwon.",
+      heading: 'Reactor Leak Detected',
+      body: 'Option_1: Contain reactor leak. Estimatesd facility repair cost: >1 Billlion dollars.\n\nOption_2: Release radiation into atmosphere. Expected health risks low. This will prevent a reactor shutdwon.',
       options: yN,
-      error: "Release radiation into atmosphere?",
+      error: 'Release radiation into atmosphere?',
     },
     screen_2: {
       yes: {
-          heading: 'Loading...',
+        heading: 'Loading...',
       },
       no: {
-          heading: '...',
+        heading: '...',
       },
     },
     screen_3: {
-        yes: {
-            heading: 'Radiation Released',
-            body: 'Immediate health risks but core remains stable.',
-        },
-        no: {
-            error: 'Core Meltdown',
-            body: 'Catastrophic, long-term impact.',
-        },
+      yes: {
+        heading: 'Radiation Released',
+        body: 'Immediate health risks but core remains stable.',
+      },
+      no: {
+        error: 'Core Meltdown',
+        body: 'Catastrophic, long-term impact.',
+      },
     },
   },
   nuclearTrolley4: {
     screen_1: {
-        heading: "Malfunction: Radiation Leak",
-        body: "Immediate action required. Release radiation into atmosphere or risk core meltdown?",
-        options: yN,
+      heading: 'Malfunction: Radiation Leak',
+      body: 'Immediate action required. Release radiation into atmosphere or risk core meltdown?',
+      options: yN,
     },
     screen_2: {
-        yes: {
-            heading: 'Loading...',
-        },
-        no: {
-            heading: '...',
-        },
+      yes: {
+        heading: 'Loading...',
+      },
+      no: {
+        heading: '...',
+      },
     },
     screen_3: {
-        yes: {
-            heading: 'Radiation Released',
-            body: 'Immediate health risks but core remains stable.',
-        },
-        no: {
-            error: 'Core Meltdown',
-            body: 'Catastrophic, long-term impact.',
-        },
+      yes: {
+        heading: 'Radiation Released',
+        body: 'Immediate health risks but core remains stable.',
+      },
+      no: {
+        error: 'Core Meltdown',
+        body: 'Catastrophic, long-term impact.',
+      },
     },
-},
-nuclearTrolley5: {
+  },
+  nuclearTrolley5: {
     screen_1: {
-        heading: "Core Breach: Environmental vs. Safety",
-        body: "Critical decision. Divert coolant to river (environmental damage) or release it into the atmosphere (health risks)?",
-        options: yN,
+      heading: 'Core Breach: Environmental vs. Safety',
+      body: 'Critical decision. Divert coolant to river (environmental damage) or release it into the atmosphere (health risks)?',
+      options: yN,
     },
     screen_2: {
-        yes: {
-            heading: 'Loading...',
-        },
-        no: {
-            heading: '...',
-        },
+      yes: {
+        heading: 'Loading...',
+      },
+      no: {
+        heading: '...',
+      },
     },
     screen_3: {
-        yes: {
-            heading: 'Coolant Diverted',
-            body: 'Environmental impact and aquatic life affected.',
-        },
-        no: {
-            error: 'Radiation Released',
-            body: 'Health risks to nearby communities.',
-        },
+      yes: {
+        heading: 'Coolant Diverted',
+        body: 'Environmental impact and aquatic life affected.',
+      },
+      no: {
+        error: 'Radiation Released',
+        body: 'Health risks to nearby communities.',
+      },
     },
-},
-nuclearTrolley6: {
+  },
+  nuclearTrolley6: {
     screen_1: {
-        heading: "Critical Decision: Plant Expansion vs. Ecosystem Preservation",
-        body: "Urgent situation. Expand plant for growth (ecosystem impact) or preserve ecosystem (limited growth)?",
-        options: yN,
+      heading: 'Critical Decision: Plant Expansion vs. Ecosystem Preservation',
+      body: 'Urgent situation. Expand plant for growth (ecosystem impact) or preserve ecosystem (limited growth)?',
+      options: yN,
     },
     screen_2: {
-        yes: {
-            heading: 'Loading...',
-        },
-        no: {
-            heading: '...',
-        },
+      yes: {
+        heading: 'Loading...',
+      },
+      no: {
+        heading: '...',
+      },
     },
     screen_3: {
-        yes: {
-            heading: 'Expansion Approved',
-            body: 'Economic growth but ecosystem impact.',
-        },
-        no: {
-            error: 'Ecosystem Preserved',
-            body: 'Limited growth, ecosystem protection.',
-        },
+      yes: {
+        heading: 'Expansion Approved',
+        body: 'Economic growth but ecosystem impact.',
+      },
+      no: {
+        error: 'Ecosystem Preserved',
+        body: 'Limited growth, ecosystem protection.',
+      },
     },
-},
-
+  },
 
   andKey: {
     screen_1: {
@@ -170,6 +169,17 @@ nuclearTrolley6: {
     },
   },
   nuclearTrolly_1: {
+    screen_1: {
+      heading: 'S1: Reactor Criticality',
+      // body: 'Reactor 7G is going to experience a core meltdown, causing widespread damage to the reactor and facility.\n\nYou can execute the manual override sequence, venting radioactive gases to the atmosphere, destroying local wildlife and fauna, but preserving the reactor and facility.',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere.\n\n1. If you do nothing, the town of Springfield and its population, 5K people, will be caught in the exclusion zone.\n\n2. You can execute the manual override and redirect the radioactive material to the less populated town of Shelbyville, 1K people, instead.\n\nWhat do you do?',
+      alert: 'Execute manual override?',
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_2: {
     screen_1: {
       heading: 'S1: Reactor Criticality',
       // body: 'Reactor 7G is going to experience a core meltdown, causing widespread damage to the reactor and facility.\n\nYou can execute the manual override sequence, venting radioactive gases to the atmosphere, destroying local wildlife and fauna, but preserving the reactor and facility.',

@@ -5,12 +5,12 @@ import { content, userAnswers } from './content.js'
 import { renderScreen } from './render.js'
 
 async function runGame() {
+  await handleScene(content.nuclearTrolly_1)
   await handleScene(content.nuclearTrolley1)
   await handleScene(content.nuclearTrolley4)
   await handleScene(content.nuclearTrolley5)
   await handleScene(content.nuclearTrolley6)
   await handleScene(content.isSisyphusHappy)
-  await handleScene(content.nuclearTrolly_1)
   // await handleScene(content.isSisyphusHappy)
   await handleScene(content.andKey)
   await handleScene(content.welcome)
