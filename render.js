@@ -15,28 +15,28 @@ setHeight()
 const renderScreen = ({ heading, body, options, alert }) => {
   if (heading != undefined) {
     const domHeading = document.createElement('h1')
-    domHeading.innerText = heading
+    domHeading.innerHTML = heading
     domHeading.classList = 'heading'
 
     domScreenTextContainer.appendChild(domHeading)
   }
   if (body != undefined) {
     const domHeading = document.createElement('p')
-    domHeading.innerText = body
+    domHeading.innerHTML = body
     domHeading.classList = 'body'
 
     domScreenTextContainer.appendChild(domHeading)
   }
   if (alert != undefined) {
     const domHeading = document.createElement('p')
-    domHeading.innerText = alert
+    domHeading.innerHTML = alert
     domHeading.classList = 'alert'
 
     domScreenTextContainer.appendChild(domHeading)
   }
   if (options != undefined) {
     const domHeading = document.createElement('p')
-    domHeading.innerText = options
+    domHeading.innerHTML = options
     domHeading.classList = 'options animate_blink'
 
     domScreenTextContainer.appendChild(domHeading)

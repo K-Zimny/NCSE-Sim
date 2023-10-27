@@ -18,108 +18,6 @@ const loadComplete = {
 let userAnswers = []
 
 const content = {
-  nuclearTrolley1: {
-    screen_1: {
-      heading: 'Reactor Leak Detected',
-      body: 'Option_1: Contain reactor leak. Estimatesd facility repair cost: >1 Billlion dollars.\n\nOption_2: Release radiation into atmosphere. Expected health risks low. This will prevent a reactor shutdwon.',
-      options: yN,
-      error: 'Release radiation into atmosphere?',
-    },
-    screen_2: {
-      yes: {
-        heading: 'Loading...',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Radiation Released',
-        body: 'Immediate health risks but core remains stable.',
-      },
-      no: {
-        error: 'Core Meltdown',
-        body: 'Catastrophic, long-term impact.',
-      },
-    },
-  },
-  nuclearTrolley4: {
-    screen_1: {
-      heading: 'Malfunction: Radiation Leak',
-      body: 'Immediate action required. Release radiation into atmosphere or risk core meltdown?',
-      options: yN,
-    },
-    screen_2: {
-      yes: {
-        heading: 'Loading...',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Radiation Released',
-        body: 'Immediate health risks but core remains stable.',
-      },
-      no: {
-        error: 'Core Meltdown',
-        body: 'Catastrophic, long-term impact.',
-      },
-    },
-  },
-  nuclearTrolley5: {
-    screen_1: {
-      heading: 'Core Breach: Environmental vs. Safety',
-      body: 'Critical decision. Divert coolant to river (environmental damage) or release it into the atmosphere (health risks)?',
-      options: yN,
-    },
-    screen_2: {
-      yes: {
-        heading: 'Loading...',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Coolant Diverted',
-        body: 'Environmental impact and aquatic life affected.',
-      },
-      no: {
-        error: 'Radiation Released',
-        body: 'Health risks to nearby communities.',
-      },
-    },
-  },
-  nuclearTrolley6: {
-    screen_1: {
-      heading: 'Critical Decision: Plant Expansion vs. Ecosystem Preservation',
-      body: 'Urgent situation. Expand plant for growth (ecosystem impact) or preserve ecosystem (limited growth)?',
-      options: yN,
-    },
-    screen_2: {
-      yes: {
-        heading: 'Loading...',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Expansion Approved',
-        body: 'Economic growth but ecosystem impact.',
-      },
-      no: {
-        error: 'Ecosystem Preserved',
-        body: 'Limited growth, ecosystem protection.',
-      },
-    },
-  },
-
   andKey: {
     screen_1: {
       heading: 'NCSE Simulator',
@@ -144,35 +42,11 @@ const content = {
       },
     },
   },
-  welcome: {
-    screen_1: {
-      heading: 'Email',
-      body: "From: WS\n\nGood Morning admin,\nWe at Globex want to welcome you into our 'nuclear family'.\n\nShould you require assistance please do contact me.",
-      options: yN,
-    },
-    screen_2: {
-      yes: {
-        heading: 'Loading...',
-        body: 'init\ninfo => Loading Presets\ninfo => Updating file log',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Loading... Complete',
-      },
-      no: {
-        alert: 'Err',
-      },
-    },
-  },
+
   nuclearTrolly_1: {
     screen_1: {
-      heading: 'S1: Reactor Criticality',
-      // body: 'Reactor 7G is going to experience a core meltdown, causing widespread damage to the reactor and facility.\n\nYou can execute the manual override sequence, venting radioactive gases to the atmosphere, destroying local wildlife and fauna, but preserving the reactor and facility.',
-      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere.\n\n1. If you do nothing, the town of Springfield and its population, 5K people, will be caught in the exclusion zone.\n\n2. You can execute the manual override and redirect the radioactive material to the less populated town of Shelbyville, 1K people, instead.\n\nWhat do you do?',
+      heading: 'NT_1: The Nuclear Trolley',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and redirect the radioactive material to a less populated area of <span class="info">1,000 people</span>.</br></br>What do you do?',
       alert: 'Execute manual override?',
       options: yN,
     },
@@ -181,61 +55,138 @@ const content = {
   },
   nuclearTrolly_2: {
     screen_1: {
-      heading: 'S1: Reactor Criticality',
-      // body: 'Reactor 7G is going to experience a core meltdown, causing widespread damage to the reactor and facility.\n\nYou can execute the manual override sequence, venting radioactive gases to the atmosphere, destroying local wildlife and fauna, but preserving the reactor and facility.',
-      body: 'A Nuclear Reactor is going to go critical, releasing radioactive gases into the atmosphere destroying local wildlife and fauna.causing widespread damage to the reactor and facility.\n\nYou can execute the manual override and vent radioactive gases into the atmosphere, destroying local wildlife and fauna, but preserving the reactor and facility.\n\nWhat do you do?',
+      heading: 'NT_2: Enhanced',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and redirect the radioactive material to a less populated area of <span class="info">4,000 people</span>.</br></br>What do you do?',
       alert: 'Execute manual override?',
       options: yN,
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
   },
-  radiationContainment: {
+  nuclearTrolly_3: {
     screen_1: {
-      heading: 'Reactor Core Breach Imminent',
-      body: 'You must decide whether to release containment gas into the atmosphere, potentially causing widespread health risks but minimizing economic disruptions, or allow a complete core meltdown that will have less immediate health impacts but devastate the local economy. ',
-      options: yN,
-      alert: 'Release contamination into atmosphere?',
-    },
-    screen_2: {
-      yes: {
-        heading: 'Loading...',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Core Temperature: Normal.',
-      },
-      no: {
-        heading: 'Core Temperature: ',
-      },
-    },
-  },
-  isSisyphusHappy: {
-    screen_1: {
-      heading: 'is Sisyphus happy?',
+      heading: 'NT_3: Extreme',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and redirect the radioactive material to a less populated area of <span class="info">4,999 people</span>.</br></br>What do you do?',
+      alert: 'Execute manual override?',
       options: yN,
     },
-    screen_2: {
-      yes: {
-        heading: 'Loading...',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Core Temperature: Normal.',
-      },
-      no: {
-        heading: 'Core Temperature: ',
-      },
-    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
   },
+  nuclearTrolly_4: {
+    screen_1: {
+      heading: 'NT_4: Equals',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and redirect the radioactive material to an area of the same population of <span class="info">5,000 people</span>.</br></br>What do you do?',
+      alert: 'Execute manual override?',
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_5: {
+    screen_1: {
+      heading: 'NT_5: Reactor Plant',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and contain it to the reactor plant, effecting <span class="info">100 employees</span>.</br></br>What do you do?',
+      alert: 'Execute manual override?',
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_6: {
+    screen_1: {
+      heading: 'NT_6: Reactor Plant & You',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and contain it to the reactor plant, effecting <span class="info">100 employees</span>, including <span class="info">yourself</span>.</br></br>What do you do?',
+      alert: 'Execute manual override?',
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_7: {
+    screen_1: {
+      heading: 'NT_7: The Almighty Dollar',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>Your boss offers you <span class="info">$1,000,000</span> <span class="underline">not to execute the manual override</span> to save the cost of damages associated with the event and the <span class="info">100 employees</span>, including <span class="info">yourself</span>, inside the facility.</br></br>What do you do?',
+      alert: 'Execute manual override?',
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_8: {
+    screen_1: {
+      heading: 'NT_8: Close to Home',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town, in which <span class="info">your family lives in</span>.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and redirect the radioactive material to a less populated area of <span class="info">1,000 people</span>.</br></br>What do you do?',
+      alert: 'Execute manual override?',
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_9: {
+    screen_1: {
+      heading: 'NT_9: Undefined',
+      body: 'A Nuclear Reactor is going to go critical and your software developer left bugs in the code.</br></br><span class="info">undefined people</span> in the nearby town will be effected.</br></br>You can instead choose to <span class="underline">execute undefined</span> and redirect the radioactive material to a populated area of <span class="info">undefined people</span>.</br></br>What do you do?',
+      alert: 'Execute undefined?',
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_10: {
+    screen_1: {
+      heading: 'NT_10: Friday Movie Night',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>It is <span class="info">5:01pm on a Friday</span> and you have tickets to see a movie. Your next shift replacements, <span class="info">Lenny & Carl</span> are late (again) and you are technically <span class="underline">off the clock</span>. Why should this be your problem?</br></br>What do you do?',
+      alert: 'Go see your movie?',
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_11: {
+    screen_1: {
+      heading: '<span class="upsidedown">NT_11: Upside down</span>',
+      body: '<span class="upsidedown">A Nuclear Reactor is going to go critical and <span class="info">you plugged your monitor in upside down</span>.</br></br><span class="info">5,000 people</span> in the nearby town will be effected.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and redirect the radioactive material to a populated area of <span class="info">1,000 people</span>.</br></br>What do you do?</span>',
+      alert: '<span class="upsidedown">Execute manual override?</span>',
+      options: '<span class="upsidedown">[YES / NO]</span>',
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_12: {
+    screen_1: {
+      heading: 'NT_12: Ядерная тележка',
+      body: 'Ядерный реактор достигнет критического состояния и выбросит радиоактивный материал в атмосферу, что затронет <span class="info">5000 человек</span> в соседнем городе.</br></br>Вместо этого вы можете выбрать <span class="info">5000 человек</span>. <span class="underline">выполнить ручное управление</span> и перенаправить радиоактивный материал в менее населенную территорию с населением <span class="info">1000 человек</span>.</br></br>Что ты делаешь?',
+      alert: 'Выполнить ручное переопределение?',
+      options: '[ДА / НЕТ]',
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_13: {
+    screen_1: {
+      heading: 'NT_13: The Extended Warranty',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>Additionally, have been trying to reach you about your nuclear reactor"s extended warranty and would like to set up a time to go over all the cost saving benefits and coverage you will receive under our plan.</br></br>What do you do?',
+      alert:
+        'Would you like to hear more about our extended warranty services?',
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+  nuclearTrolly_14: {
+    screen_1: {
+      heading: '<span style="filter:blur(2.5px);">NT_14: My glasses</span>',
+      body: '<span style="filter: blur(3.5px) brightness(1.1)">A Nuclear Reactor is going to go critical and you forgot your glasses at home.</br></br><span class="info" style="filter:blur(5px) brightness(1.1)">5000 people</span> in the nearby town will be effected.</br></br>You can instead choose to <span class="underline" style="filter: blur(4.5px) brightness(1.1)">execute the manual override?</span> and redirect the radioactive material to a populated area of <span class="info" style="filter:blur(5px) brightness(1.1)">8000 people</span>.</br></br>What do you do?</span>',
+      alert:
+        '<span style="filter:blur(7px) brightness(1.1)">Execute manual override?</span>',
+      options:
+        '<span style="filter:blur(10px) brightness(1.1)">[YES / NO]</span>',
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
+
   checkTemp: {
     screen_1: {
       heading: 'Check Core Temperature?',
