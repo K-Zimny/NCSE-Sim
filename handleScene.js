@@ -30,6 +30,7 @@ function handleScene(sceneContent) {
 
         terminalInput.value = ''
         clearScreen()
+
         renderScreen(
           terminalValue === 'YES'
             ? sceneContent.screen_2.yes
