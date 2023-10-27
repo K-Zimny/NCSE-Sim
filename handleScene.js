@@ -2,7 +2,7 @@ import { addDelay } from './core/addDelay/addDelay.js'
 import { renderScreen, clearScreen } from './render.js'
 import { userAnswers } from './content.js'
 
-const testingDelayTime = 1000
+const testingDelayTime = 3000
 
 function handleScene(sceneContent) {
   return new Promise((resolve) => {

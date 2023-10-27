@@ -2,6 +2,109 @@ const yN = '[YES / NO]'
 let userAnswers = []
 
 const content = {
+  nuclearTrolley1: {
+    screen_1: {
+      heading: "Reactor Leak Detected",
+      body: "Option_1: Contain reactor leak. Estimatesd facility repair cost: >1 Billlion dollars.\n\nOption_2: Release radiation into atmosphere. Expected health risks low. This will prevent a reactor shutdwon.",
+      options: yN,
+      error: "Release radiation into atmosphere?",
+    },
+    screen_2: {
+      yes: {
+          heading: 'Loading...',
+      },
+      no: {
+          heading: '...',
+      },
+    },
+    screen_3: {
+        yes: {
+            heading: 'Radiation Released',
+            body: 'Immediate health risks but core remains stable.',
+        },
+        no: {
+            error: 'Core Meltdown',
+            body: 'Catastrophic, long-term impact.',
+        },
+    },
+  },
+  nuclearTrolley4: {
+    screen_1: {
+        heading: "Malfunction: Radiation Leak",
+        body: "Immediate action required. Release radiation into atmosphere or risk core meltdown?",
+        options: yN,
+    },
+    screen_2: {
+        yes: {
+            heading: 'Loading...',
+        },
+        no: {
+            heading: '...',
+        },
+    },
+    screen_3: {
+        yes: {
+            heading: 'Radiation Released',
+            body: 'Immediate health risks but core remains stable.',
+        },
+        no: {
+            error: 'Core Meltdown',
+            body: 'Catastrophic, long-term impact.',
+        },
+    },
+},
+nuclearTrolley5: {
+    screen_1: {
+        heading: "Core Breach: Environmental vs. Safety",
+        body: "Critical decision. Divert coolant to river (environmental damage) or release it into the atmosphere (health risks)?",
+        options: yN,
+    },
+    screen_2: {
+        yes: {
+            heading: 'Loading...',
+        },
+        no: {
+            heading: '...',
+        },
+    },
+    screen_3: {
+        yes: {
+            heading: 'Coolant Diverted',
+            body: 'Environmental impact and aquatic life affected.',
+        },
+        no: {
+            error: 'Radiation Released',
+            body: 'Health risks to nearby communities.',
+        },
+    },
+},
+nuclearTrolley6: {
+    screen_1: {
+        heading: "Critical Decision: Plant Expansion vs. Ecosystem Preservation",
+        body: "Urgent situation. Expand plant for growth (ecosystem impact) or preserve ecosystem (limited growth)?",
+        options: yN,
+    },
+    screen_2: {
+        yes: {
+            heading: 'Loading...',
+        },
+        no: {
+            heading: '...',
+        },
+    },
+    screen_3: {
+        yes: {
+            heading: 'Expansion Approved',
+            body: 'Economic growth but ecosystem impact.',
+        },
+        no: {
+            error: 'Ecosystem Preserved',
+            body: 'Limited growth, ecosystem protection.',
+        },
+    },
+},
+
+
   andKey: {
     screen_1: {
       heading: "NCSE Simulator",

@@ -27,17 +27,17 @@ const renderScreen = ({ heading, body, options, error }) => {
 
     domScreenTextContainer.appendChild(domHeading)
   }
-  if (options != undefined) {
-    const domHeading = document.createElement('p')
-    domHeading.innerText = options
-    domHeading.classList = 'options animate_blink'
-
-    domScreenTextContainer.appendChild(domHeading)
-  }
   if (error != undefined) {
     const domHeading = document.createElement('p')
     domHeading.innerText = error
     domHeading.classList = 'error'
+
+    domScreenTextContainer.appendChild(domHeading)
+  }
+  if (options != undefined) {
+    const domHeading = document.createElement('p')
+    domHeading.innerText = options
+    domHeading.classList = 'options animate_blink'
 
     domScreenTextContainer.appendChild(domHeading)
   }
