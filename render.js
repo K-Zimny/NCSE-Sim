@@ -1,3 +1,5 @@
+import { addDelay } from "./core/addDelay/addDelay.js"
+
 const domBody = document.querySelector('body')
 const domScreen = document.querySelector("[data-component='screen']")
 const domScreenTextContainer = domScreen.querySelector('.screen_text-container')
@@ -6,19 +8,24 @@ const domInput = document.createElement('input')
 
 function setHeight() {
   let vh = window.innerHeight
-  domBody.style.height = `calc(${vh}px - 8rem)`
+  domBody.style.height = `calc(${vh}px - 4rem)`
   window.addEventListener('resize', setHeight)
 }
 
 setHeight()
 
-const renderScreen = ({ heading, body, options, alert }) => {
+const renderScreen = async ({ heading, body, options, alert }) => {
+  if (!domInputExists) {
+    domScreen.appendChild(domInput)
+  }
+
   if (heading != undefined) {
     const domHeading = document.createElement('h1')
     domHeading.innerHTML = heading
     domHeading.classList = 'heading'
 
     domScreenTextContainer.appendChild(domHeading)
+    await addDelay(100);
   }
   if (body != undefined) {
     const domHeading = document.createElement('p')
@@ -26,6 +33,7 @@ const renderScreen = ({ heading, body, options, alert }) => {
     domHeading.classList = 'body'
 
     domScreenTextContainer.appendChild(domHeading)
+    await addDelay(100);
   }
   if (alert != undefined) {
     const domHeading = document.createElement('p')
@@ -33,6 +41,7 @@ const renderScreen = ({ heading, body, options, alert }) => {
     domHeading.classList = 'alert'
 
     domScreenTextContainer.appendChild(domHeading)
+    await addDelay(100);
   }
   if (options != undefined) {
     const domHeading = document.createElement('p')
@@ -40,10 +49,6 @@ const renderScreen = ({ heading, body, options, alert }) => {
     domHeading.classList = 'options animate_blink'
 
     domScreenTextContainer.appendChild(domHeading)
-  }
-
-  if (!domInputExists) {
-    domScreen.appendChild(domInput)
   }
 }
 

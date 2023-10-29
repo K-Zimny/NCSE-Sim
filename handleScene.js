@@ -2,7 +2,7 @@ import { addDelay } from './core/addDelay/addDelay.js'
 import { renderScreen, clearScreen } from './render.js'
 import { userAnswers } from './content.js'
 
-const testingDelayTime = 10
+const testingDelayTime = 750
 
 function handleScene(sceneContent) {
   return new Promise((resolve) => {
@@ -23,16 +23,17 @@ function handleScene(sceneContent) {
     terminalInput.addEventListener('input', async function handler(e) {
       terminalValue = e.target.value.toUpperCase()
 
-      if (terminalValue === 'YES' || terminalValue === 'NO') {
+      if (terminalValue === 'YES' || terminalValue === 'NO' || terminalValue === '>>> YES' || terminalValue === '>>> NO') {
         await addDelay(testingDelayTime)
 
         this.removeEventListener('input', handler)
 
         terminalInput.value = ''
         clearScreen()
+        await addDelay(500)
 
         renderScreen(
-          terminalValue === 'YES'
+          terminalValue === ('YES' || '>>> YES')
             ? sceneContent.screen_2.yes
             : sceneContent.screen_2.no
         )
@@ -41,7 +42,7 @@ function handleScene(sceneContent) {
 
         clearScreen()
         renderScreen(
-          terminalValue === 'YES'
+          terminalValue === ('YES' || '>>> YES')
             ? sceneContent.screen_3.yes
             : sceneContent.screen_3.no
         )
@@ -53,7 +54,7 @@ function handleScene(sceneContent) {
 
         await addDelay(testingDelayTime)
         clearScreen()
-        await addDelay(testingDelayTime)
+        await addDelay(1100)
 
         resolve()
       }

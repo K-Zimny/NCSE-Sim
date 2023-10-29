@@ -17,7 +17,7 @@ input {
 
 .heading {
   margin-top: 0rem;
-  font-size: 75px;
+  font-size: 50px;
   letter-spacing: 10px;
   text-decoration: underline;
   text-underline-offset: 25px;
@@ -38,10 +38,10 @@ input {
 
 body {
   background: #b4a396;
-  margin: 4rem;
+  margin: 2rem;
   text-transform: uppercase;
   font-family: 'Play', sans-serif;
-  font-size: 50px;
+  font-size: 35px;
   /* font-size: 70px; */
   color: #38e28f;
   text-shadow: #38e28f 0px 0px 50px;
@@ -68,7 +68,7 @@ div[data-component='screen'] {
   position: relative;
   z-index: 2;
   position: relative;
-  opacity: 0.95;
+  opacity: 0.85;
 }
 
 .video {
@@ -87,16 +87,19 @@ input {
   border: none;
   text-transform: uppercase;
   font-family: 'Play', sans-serif;
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 0.5rem;
   color: #38e28f;
-  text-shadow: #38e28f 0px 0px 50px;
+  text-shadow: #38e28f73 0px 0px 10px;
   filter: drop-shadow(0px 0px 0px #38e28f) blur(0px) brightness(1.1);
-  letter-spacing: -5px;
+  letter-spacing: 5px;
   line-height: 70px;
   background: transparent;
   outline: none;
-  caret-color: transparent;
+  border-bottom: 3px solid;
+  border-top: 3px solid;
+  padding-left: 65px;
+  /* caret-color: transparent; */
 }
 
 .hidden {
@@ -104,7 +107,7 @@ input {
 }
 
 .alert {
-  font-size: 60px;
+  font-size: 35px;
   color: #ff0000;
   text-shadow: #ff000085 0px 0px 50px;
   filter: drop-shadow(0px 0px 2px #ff0000) blur(0px) brightness(1.1);
@@ -112,6 +115,10 @@ input {
   padding: 10px;
   display: inline-block;
   margin-bottom: 0px;
+}
+
+.options {
+  letter-spacing: 5px;
 }
 
 .info {
@@ -132,6 +139,13 @@ input {
 .upsidedown {
   display: block;
   transform: rotate(180deg);
+}
+
+.rad-logo{
+  position: absolute;
+  font-size: 70px;
+  line-height: 0px;
+  bottom: 94px;
 }
 
 /* Animations */
@@ -155,5 +169,21 @@ input {
   }
   100% {
     opacity: 0%;
+  }
+}
+
+.animate_rotate {
+  animation-duration: 10s;
+  animation-name: animate_rotate;
+  animation-iteration-count: infinite;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes animate_rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

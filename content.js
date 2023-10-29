@@ -1,18 +1,27 @@
 const yN = '[YES / NO]'
 const loadScreen = {
   yes: {
-    heading: 'Loading...',
+    heading: 'NUCLEAR REACTOR CORE OVERRIDE',
+    body: "ExecStart=/bin/sh -c \'find -L . \-maxdepth 1 \-type f \-iregex .*/\\(FTBServer\\|craftbukkit\\|spigot\\|paper\\|forge\\|minecraft_server\\).*jar \-print0 \-quit \| xargs -0 -I{} \/usr/bin/screen -DmS mc-%i \/usr/bin/java \-server \-Xms${MCMINMEM} \-Xmx${MCMAXMEM} \-XX:+UseG1GC \-XX:ParallelGCThreads=2 \-XX:MinHeapFreeRatio=5 \-XX:MaxHeapFreeRatio=10 \-jar {} \--nogui.\'find -L . \-maxdepth 1 \-type f \-iregex .*/\\(FTBServer\\|craftbukkit\\|spigot\\|paper\\|forge\\|minecraft_server\\).*jar \-print0 \-quit \| xargs -0 -I{} \/usr/bin/screen -DmS mc-%i \/usr/bin/java \-ser",
+    options: "[Install] === WantedBy=multi-user.target",
+    alert: "SYS AUTH: ADMIN | Password: *****"
   },
   no: {
-    heading: '...',
+    heading: 'NUCLEAR REACTOR CORE WARNING',
+    options: "IncreasingEmergency Shutdown Initiated",
+    alert: "ALERT: Reactor Core Temperature Critical!",
+    body: "Reactor Core Temperature: 500°C (Normal Range: 200°C - 300°C)Cooling System Failure DetectedRadiation Levels: IncreasingEmergency Shutdown Initiated================================================================ACTION REQUIRED:1. Evacuate the facility immediately.2. Notify the emergency response team and local authorities.3. Seek shelter and follow safety instructions from authorities.================================================================",
   },
 }
 const loadComplete = {
   yes: {
     heading: 'Loading... Complete.',
+    body: " #!/bin/bash# /etc/init.d/minecraft# version 0.4.2 2016-02-09 (YYYY-MM-DD)#### BEGIN INIT INFO# Provides:   minecraft# Required-Start: $local_fs $remote_fs screen-cleanup# Required-Stop:  $local_fs $remote_fs# Should-Start:   $network# Should-Stop:    $network# Default-Start:  2 3 4 5# Default-Stop:   0 1 6# Short-Description:    Minecraft server# Description:    Starts the minecraft server### END INIT INFO",
   },
   no: {
-    heading: '... ... ...',
+    heading: 'NUCLEAR REACTOR CORE Critical',
+    body: "#SettingsSERV ICE='minecraft_server.jar'SCREENNAME='minecraft_server'OPTIONS='--nogui'USERNAME='minecraft'WORLD='world'MCPATH='/home/minecraft'BACKUPPATH='/minecraft/minecraft.backup'",
+    alert: "Error Exit status: 1. Core Failure."
   },
 }
 let userAnswers = []
@@ -20,29 +29,22 @@ let userAnswers = []
 const content = {
   andKey: {
     screen_1: {
-      heading: 'NCSE Simulator',
-      // body: "Nuclear Criticality Safety Engineer",
-      options: 'Press YES [Any Key] to begin.',
+      heading: 'Nuclear Trolley Sim',
+      options: 'Type YES to begin.',
     },
-    screen_2: {
-      yes: {
-        heading: 'Loading...',
-        body: 'init\ninfo => Loading Presets\ninfo => Updating file log',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Loading... Complete',
-      },
-      no: {
-        alert: 'Err',
-      },
-    },
+    screen_2: loadScreen,
+    screen_3: loadComplete
   },
-
+  stupidBrother: {
+    screen_1: {
+      heading: "Brother, Can you spare two dimes?",
+      body: "Your Brother asks you to make a video game for his Halloween costume and then decides not to go with that costume and game.</br></br>",
+      alert: "is Kenny happy?",
+      options: yN,
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+  },
   nuclearTrolly_1: {
     screen_1: {
       heading: 'NT_1: The Nuclear Trolley',
@@ -116,7 +118,7 @@ const content = {
   nuclearTrolly_8: {
     screen_1: {
       heading: 'NT_8: Close to Home',
-      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town, in which <span class="info">your family lives in</span>.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and redirect the radioactive material to a less populated area of <span class="info">1,000 people</span>.</br></br>What do you do?',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You can instead choose to <span class="underline">execute the manual override</span> and redirect the radioactive material to a less populated area of <span class="info">1,000 people</span>, however, <span class="info">your family lives in this town</span>.</br></br>What do you do?',
       alert: 'Execute manual override?',
       options: yN,
     },
@@ -126,7 +128,7 @@ const content = {
   nuclearTrolly_9: {
     screen_1: {
       heading: 'NT_9: Undefined',
-      body: 'A Nuclear Reactor is going to go critical and your software developer left bugs in the code.</br></br><span class="info">undefined people</span> in the nearby town will be effected.</br></br>You can instead choose to <span class="underline">execute undefined</span> and redirect the radioactive material to a populated area of <span class="info">undefined people</span>.</br></br>What do you do?',
+      body: 'A Nuclear Reactor is going to go critical and <span class="info">your software developer left bugs in the code</span>.</br></br><span class="info">undefined people</span> in the nearby town will be effected.</br></br>You can instead choose to <span class="underline">execute undefined</span> and redirect the radioactive material to a populated area of <span class="info">undefined people</span>.</br></br>What do you do?',
       alert: 'Execute undefined?',
       options: yN,
     },
@@ -185,78 +187,6 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
-  },
-
-  checkTemp: {
-    screen_1: {
-      heading: 'Check Core Temperature?',
-      body: 'Returns status of reactor core #17',
-      options: yN,
-      alert: 'No alerts present',
-    },
-    screen_2: {
-      yes: {
-        heading: 'Loading...',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Core Temperature: Normal.',
-      },
-      no: {
-        heading: 'Core Temperature: ',
-      },
-    },
-  },
-  ventGas: {
-    screen_1: {
-      heading: 'Vent Gas?',
-      body: 'Open radium actuator to relieve core gases. Venting prevents explosions',
-      options: yN,
-    },
-    screen_2: {
-      yes: {
-        heading: 'Venting...',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Gas Vented',
-        body: 'System Pressure: Normal',
-      },
-      no: {
-        heading: '',
-      },
-    },
-  },
-  removeControlRod: {
-    screen_1: {
-      heading: 'Remove Control Rod?',
-      body: 'Removes neutron control device from core.',
-      options: yN,
-    },
-    screen_2: {
-      yes: {
-        heading: 'Processing...',
-      },
-      no: {
-        heading: '...',
-      },
-    },
-    screen_3: {
-      yes: {
-        heading: 'Criticality Event Imminent',
-      },
-      no: {
-        heading: '...',
-      },
-    },
   },
   userAnswerReport: {
     screen_1: {
