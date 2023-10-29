@@ -33,7 +33,7 @@ const renderScreen = async ({ heading, body, options, alert }) => {
     domHeading.classList = 'body'
 
     domScreenTextContainer.appendChild(domHeading)
-    await addDelay(100);
+    // await addDelay(100);
   }
   if (alert != undefined) {
     const domHeading = document.createElement('p')
@@ -41,7 +41,7 @@ const renderScreen = async ({ heading, body, options, alert }) => {
     domHeading.classList = 'alert'
 
     domScreenTextContainer.appendChild(domHeading)
-    await addDelay(100);
+    // await addDelay(100);
   }
   if (options != undefined) {
     const domHeading = document.createElement('p')

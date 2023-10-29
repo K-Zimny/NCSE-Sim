@@ -2,10 +2,11 @@
 
 import { handleScene } from './handleScene.js'
 import { content, userAnswers } from './content.js'
-import { renderScreen } from './render.js'
 
 async function runGame() {
-  // await handleScene(content.happy)
+  window.onbeforeunload = function() {
+    return "Your progress will be lost if you leave the page, are you sure?";
+  };
   await handleScene(content.andKey)
   await handleScene(content.nuclearTrolly_1)
   await handleScene(content.nuclearTrolly_2)
@@ -21,14 +22,7 @@ async function runGame() {
   await handleScene(content.nuclearTrolly_12)
   await handleScene(content.nuclearTrolly_13)
   await handleScene(content.nuclearTrolly_14)
-  await handleScene(content.stupidBrother)
-  // await handleScene(content.isSisyphusHappy)
-  // await handleScene(content.isSisyphusHappy)
-  // await handleScene(content.welcome)
-  // await handleScene(content.radiationContainment)
-  // await handleScene(content.checkTemp)
-  // await handleScene(content.ventGas)
-  // await handleScene(content.removeControlRod)
+  await handleScene(content.nuclearTrolly_15)
   handleScene(content.userAnswerReport)
   console.table(userAnswers)
 }

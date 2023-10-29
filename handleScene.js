@@ -2,7 +2,7 @@ import { addDelay } from './core/addDelay/addDelay.js'
 import { renderScreen, clearScreen } from './render.js'
 import { userAnswers } from './content.js'
 
-const testingDelayTime = 750
+const testingDelayTime = 1250
 
 function handleScene(sceneContent) {
   return new Promise((resolve) => {
@@ -54,7 +54,9 @@ function handleScene(sceneContent) {
 
         await addDelay(testingDelayTime)
         clearScreen()
-        await addDelay(1100)
+        await addDelay(500)
+        renderScreen(sceneContent.screen_quote)
+        await addDelay(5000)
 
         resolve()
       }

@@ -33,7 +33,10 @@ const content = {
       options: 'Type YES to begin.',
     },
     screen_2: loadScreen,
-    screen_3: loadComplete
+    screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>If you gaze into the abyss, the abyss gazes also into you</br></br>- Friedrich Nietzsche -</span>",
+    }
   },
   stupidBrother: {
     screen_1: {
@@ -54,6 +57,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>At times, morality requires us to make sacrifices for the greater good, even if they seem unjust or difficult to accept.</br></br>- The Trolley Problem -</span>",
+    }
   },
   nuclearTrolly_2: {
     screen_1: {
@@ -64,6 +70,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>We need nuclear energy now, and we will need it in the future.</br></br>- Conor Lamb -</span>",
+    }
   },
   nuclearTrolly_3: {
     screen_1: {
@@ -74,6 +83,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>Now, I am become Death, the destroyer of worlds</br></br>- Robert Oppenheimer -</span>",
+    }
   },
   nuclearTrolly_4: {
     screen_1: {
@@ -84,6 +96,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>Nuclear power is one hell of a way to boil water.</br></br>- Albert Einstein -</span>",
+    },
   },
   nuclearTrolly_5: {
     screen_1: {
@@ -94,6 +109,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>Nuclear energy, in terms of an overall safety record, is better than other energy.</br></br>- Bill Gates -</span>",
+    },
   },
   nuclearTrolly_6: {
     screen_1: {
@@ -104,6 +122,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>In the world of the Trolley Problem, we are forced to grapple with the idea that our moral intuitions are in constant tension, and there is no one-size-fits-all solution.</br></br>- Unknown -</span>",
+    },
   },
   nuclearTrolly_7: {
     screen_1: {
@@ -114,6 +135,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'> When faced with the Trolley Problem, we must choose between two paths, both fraught with ethical uncertainty, and in that moment, we reveal our true moral compass.</br></br>- Unknown -</span>"
+    }
   },
   nuclearTrolly_8: {
     screen_1: {
@@ -124,6 +148,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>Nuclear radiation reminds us of the immense power and responsibility that comes with harnessing the atom for peaceful or destructive purposes.</br></br> - Unknown -</span>"
+    }
   },
   nuclearTrolly_9: {
     screen_1: {
@@ -134,6 +161,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>Nuclear radiation forces us to confront the inherent uncertainty of our technological creations and their long-term impact on our world.</br></br>- Unknown -</span>"
+    }   
   },
   nuclearTrolly_10: {
     screen_1: {
@@ -144,6 +174,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>Nuclear radiation knows no state boundaries; it doesn't care about the color of your passport. It is a global issue that requires global cooperation.</br></br>- Mohamed ElBaradei -</span>"
+    }
   },
   nuclearTrolly_11: {
     screen_1: {
@@ -154,6 +187,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>The Trolley Problem reminds us that moral decision-making is often a choice between two evils, and our choice reflects our values and ethical priorities.</br></br>- Unknown -</span>"
+    }
   },
   nuclearTrolly_12: {
     screen_1: {
@@ -164,6 +200,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>Какая-то глубокая цитата на русском языке</span>"
+    }
   },
   nuclearTrolly_13: {
     screen_1: {
@@ -175,6 +214,9 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>Insert Profound quote here</br></br>- Unknown -</span>"
+    }
   },
   nuclearTrolly_14: {
     screen_1: {
@@ -187,11 +229,30 @@ const content = {
     },
     screen_2: loadScreen,
     screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote' style='filter:blur(5px) brightness(1.1)'>No one can know That I dropped my glasses in the toilet...</br></br>- Henry Kissinger -</span>"
+    }
+  },
+  nuclearTrolly_15: {
+    screen_1: {
+      heading: "NT_15: It's all a dream",
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You live in this town and have <span class="info">no control</span> over what the nuclear safety engineer will choose todo. Like so many things in life, <span class="info">these choices exist beyond your control</span>.</br></br>What can you do? Does anything really matter at all? Is this even a simulation?',
+      alert:
+        'Is everything a lie?',
+      options: '[YES / YES]'
+    },
+    screen_2: loadScreen,
+    screen_3: loadComplete,
+    screen_quote: {
+      body: "<span class='quote'>we're especially thankful for nuclear power, the cleanest safest energy source there is. Except for solar, which is just a pipe dream.</br></br>- Homer -</span>"
+    }
+
   },
   userAnswerReport: {
     screen_1: {
       heading: 'Your Score',
       body: userAnswers,
+      alert: "Thanks for playing"
     },
   },
 }
