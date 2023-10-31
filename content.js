@@ -159,17 +159,43 @@ const content = {
       alert: 'Execute undefined?',
       options: yN,
     },
-    screen_2: loadScreen,
-    screen_3: loadComplete,
+    screen_2: {
+      yes: {
+        heading: "Undefined",
+        body: "Undefined",
+        alert: "Undefined",
+        options: "Undefined"
+      },
+      no: {
+        heading: "Undefined",
+        body: "Undefined",
+        alert: "Undefined",
+        options: "Undefined"
+      }
+    },
+    screen_3: {
+      yes: {
+        heading: "Undefined",
+        body: "Undefined",
+        alert: "Undefined",
+        options: "Undefined"
+      },
+      no: {
+        heading: "Undefined",
+        body: "Undefined",
+        alert: "Undefined",
+        options: "Undefined"
+      }
+    },
     screen_quote: {
-      body: "<span class='quote'>Nuclear radiation forces us to confront the inherent uncertainty of our technological creations and their long-term impact on our world.</br></br>- Unknown -</span>"
+      body: "<span class='quote'Undefined.</br></br>- Undefined -</span>"
     }   
   },
   nuclearTrolly_10: {
     screen_1: {
-      heading: 'NT_10: Friday Movie Night',
-      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>It is <span class="info">5:01pm on a Friday</span> and you have tickets to see a movie. Your next shift replacements, <span class="info">Lenny & Carl</span> are late (again) and you are technically <span class="underline">off the clock</span>. Why should this be your problem?</br></br>What do you do?',
-      alert: 'Go see your movie?',
+      heading: 'NT_10: Friday karaoke Night',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>It is <span class="info">5:01pm on a Friday</span> and you have plans to go bowling. Your next shift replacements, <span class="info">Lenny & Carl</span> are late and you are technically <span class="underline">off the clock</span>.</br></br>What do you do?',
+      alert: 'Go bowling?',
       options: yN,
     },
     screen_2: loadScreen,
@@ -188,7 +214,7 @@ const content = {
     screen_2: loadScreen,
     screen_3: loadComplete,
     screen_quote: {
-      body: "<span class='quote'>The Trolley Problem reminds us that moral decision-making is often a choice between two evils, and our choice reflects our values and ethical priorities.</br></br>- Unknown -</span>"
+      body: "<span class='quote upsidedown'>The Trolley Problem reminds us that moral decision-making is often a choice between two evils, and our choice reflects our values and ethical priorities.</br></br>- Unknown -</span>"
     }
   },
   nuclearTrolly_12: {
@@ -236,9 +262,9 @@ const content = {
   nuclearTrolly_15: {
     screen_1: {
       heading: "NT_15: It's all a dream",
-      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You live in this town and have <span class="info">no control</span> over what the nuclear safety engineer will choose todo. Like so many things in life, <span class="info">these choices exist beyond your control</span>.</br></br>What can you do? Does anything really matter at all? Is this even a simulation?',
+      body: 'A Nuclear Reactor is going to go critical and release radioactive material into the atmosphere, effecting <span class="info">5,000 people</span> in the nearby town.</br></br>You live in this town and have <span class="info">no control</span> over what the nuclear safety engineer will choose todo. Like so many things in life, <span class="info">these choices exist beyond your control</span>.</br></br>What can you do? Does anything really matter at all? Is this even a simulation?Is everything a lie?',
       alert:
-        'Is everything a lie?',
+        'Go back to work?',
       options: '[YES / YES]'
     },
     screen_2: loadScreen,

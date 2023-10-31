@@ -56,7 +56,7 @@ function handleScene(sceneContent) {
         clearScreen()
         await addDelay(500)
         renderScreen(sceneContent.screen_quote)
-        await addDelay(7000)
+        await addDelay(5000)
         clearScreen();
         await addDelay(2000)
 
